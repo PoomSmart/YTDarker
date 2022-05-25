@@ -29,7 +29,12 @@
 %hook YTAccountPanelBodyViewController
 
 - (UIColor *)backgroundColor:(NSInteger)pageStyle {
-    return pageStyle == 1 ? [[%c(YTColorPalette) darkPalette] background1] : %orig;
+    if (pageStyle == 1) {
+        if (%c(YTCommonColorPalette))
+            return [[%c(YTCommonColorPalette) darkPalette] background1];
+        return [[%c(YTColorPalette) darkPalette] background1];
+    }
+    return %orig;
 }
 
 %end
