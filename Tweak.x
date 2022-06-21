@@ -8,6 +8,22 @@
     return YES;
 }
 
+- (BOOL)useDarkerPaletteBgColorForElements {
+    return YES;
+}
+
+- (BOOL)useDarkerPaletteTextColorForElements {
+    return YES;
+}
+
+- (BOOL)uiSystemsClientGlobalConfigUseDarkerPaletteBgColorForNative {
+    return YES;
+}
+
+- (BOOL)uiSystemsClientGlobalConfigUseDarkerPaletteTextColorForNative {
+    return YES;
+}
+
 %end
 
 %hook YTColorPalette
@@ -21,6 +37,10 @@
 %hook YTCommonColorPalette
 
 - (UIColor *)brandBackgroundPrimary {
+    return [self pageStyle] == 1 ? [%c(YTColor) black3] : %orig;
+}
+
+- (UIColor *)background1 {
     return [self pageStyle] == 1 ? [%c(YTColor) black3] : %orig;
 }
 
