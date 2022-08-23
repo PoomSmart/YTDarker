@@ -44,6 +44,10 @@
     return [self pageStyle] == 1 ? [%c(YTColor) black3] : %orig;
 }
 
+- (UIColor *)raisedBackground {
+    return [self pageStyle] == 1 ? [%c(YTColor) black3] : %orig;
+}
+
 %end
 
 %hook YTAccountPanelBodyViewController
