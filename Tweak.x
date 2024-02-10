@@ -1,6 +1,6 @@
-#import "../YouTubeHeader/YTColor.h"
-#import "../YouTubeHeader/YTColorPalette.h"
-#import "../YouTubeHeader/YTCommonColorPalette.h"
+#import <YouTubeHeader/YTColor.h>
+#import <YouTubeHeader/YTColorPalette.h>
+#import <YouTubeHeader/YTCommonColorPalette.h>
 
 %hook YTColdConfig
 
